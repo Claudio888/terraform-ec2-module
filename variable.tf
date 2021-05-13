@@ -7,6 +7,10 @@ variable "env_prefix"{
   type    = string
   }
 
+variable "name"{
+  type    = string
+  }
+
 variable "ingress_ports"{
   type    = list(number)
   default = [22]

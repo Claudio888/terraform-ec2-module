@@ -14,5 +14,5 @@ resource "aws_instance" "application" {
   tags = {
     Name = format("%s-%s",var.name,var.env_prefix)
       }
-  vpc_security_group_ids = var.enable_sg ? [aws_security_group.instance_security_group[*].id] : [data.aws_security_group.default.id]
+  vpc_security_group_ids = var.enable_sg ? aws_security_group.instance_security_group[*].id : [data.aws_security_group.default.id]
 }

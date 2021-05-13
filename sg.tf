@@ -12,8 +12,8 @@ data "aws_security_group" "default" {
 
 resource "aws_security_group" "instance_security_group" {
   count = var.enable_sg ? 1 : 0
-  name        = format("getipsg-%s",var.env_prefix)
-  description = format("Sg for - %s",var.env_prefix)
+  name        = format("%s-%s",var.name,var.env_prefix)
+  description = format("Sg for %s-%s",var.name,var.env_prefix)
 
   dynamic "ingress"{
       for_each = var.ingress_ports

@@ -3,10 +3,6 @@ data "aws_security_group" "default" {
     name   = "group-name"
     values = ["default"] 
   }
-  
-  tags = {
-    produto   = "default"
-  }
 }
 
 

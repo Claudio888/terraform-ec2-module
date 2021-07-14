@@ -10,7 +10,7 @@ data "aws_ami" "ubuntu"{
 resource "aws_instance" "application" {
   ami           = data.aws_ami.ubuntu.id
   instance_type = var.instance_type
-  key_name = "ec2-default"
+  key_name = "aws_ec2"
   tags = {
     Name = format("%s-%s",var.name,var.env_prefix)
       }
